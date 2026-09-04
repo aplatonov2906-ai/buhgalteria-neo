@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НЕО — бухгалтерское обслуживание ИП и ООО под ключ</title>
+<meta name="description" content="Бухгалтерское сопровождение ИП и ООО: отчётность, налоги, зарплата, общение с ФНС. Фиксированная цена в договоре и финансовая ответственность за ошибки. Аудит учёта бесплатно.">
+<link rel="canonical" href="https://buhgalteria-neo.ru/">
+<meta name="theme-color" content="#2447f5">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="НЕО">
+<meta property="og:title" content="НЕО — бухгалтерское обслуживание ИП и ООО под ключ">
+<meta property="og:description" content="Фиксированная цена в договоре, финансовая ответственность за ошибки, подключение за один день. Аудит текущего учёта — бесплатно.">
+<meta property="og:url" content="https://buhgalteria-neo.ru/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-tint:#f4f6fa;
+  --ink:#0d1220;
+  --ink-soft:#5a6272;
+  --line:#e6e9ef;
+  --blue:#2447f5;
+  --blue-dark:#1a35c4;
+  --blue-soft:#ecf0ff;
+  --lime:#d8f34e;
+  --navy:#0d1220;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Golos Text',system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);
+  line-height:1.65;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.disp{font-family:'Inter Tight',sans-serif;font-weight:700;line-height:1.12;letter-spacing:-.025em}
+img,svg{max-width:100%;vertical-align:middle}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;border-radius:12px;font-weight:600;font-size:15px;
+  cursor:pointer;border:none;transition:all .2s ease;font-family:'Golos Text',sans-serif;
+}
+.btn svg{transition:transform .2s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-dark)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:#c7e63a}
+
+.section{padding:96px 0}
+.tagpill{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--blue);background:var(--blue-soft);
+  border-radius:100px;padding:7px 16px;margin-bottom:20px;
+}
+.section h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:18px;max-width:720px}
+.section .lead{color:var(--ink-soft);font-size:17px;max-width:580px}
+.section-head{margin-bottom:52px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* header */
+.topbar{
+  background:var(--navy);color:#aeb6c6;font-size:12.5px;padding:8px 0;
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar b{color:var(--lime);font-weight:600}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:'Inter Tight',sans-serif;font-size:21px;font-weight:800;letter-spacing:-.03em}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-size:14px;font-weight:600;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-btn{padding:11px 20px;font-size:14px;border-radius:10px}
+.burger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px}
+
+/* hero */
+.hero{padding:84px 0 72px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:72px 72px;opacity:.5;
+  -webkit-mask-image:radial-gradient(720px 480px at 78% 30%,#000 30%,transparent 75%);
+          mask-image:radial-gradient(720px 480px at 78% 30%,#000 30%,transparent 75%);
+}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;position:relative}
+.hero h1{font-size:clamp(36px,5vw,62px);font-weight:800;margin-bottom:24px}
+.hero h1 .hl{
+  color:var(--blue);
+}
+.hero h1 .mark{
+  background:var(--lime);padding:0 .12em;border-radius:10px;white-space:nowrap;
+}
+.hero p{font-size:18px;color:var(--ink-soft);max-width:500px;margin-bottom:34px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap}
+.hbadge{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+  border-radius:100px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:#fff;
+}
+.hbadge svg{color:var(--blue)}
+
+/* hero dashboard */
+.dash{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 30px 70px -30px rgba(13,18,32,.25);overflow:hidden;position:relative;
+}
+.dash-head{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:18px 24px;border-bottom:1px solid var(--line);font-size:13.5px;font-weight:600;
+}
+.dash-head .dot{display:inline-flex;align-items:center;gap:8px;color:var(--ink-soft);font-weight:500}
+.dash-head .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#2bc76a}
+.dash-body{padding:24px}
+.dash-num{margin-bottom:22px}
+.dash-num span{display:block;font-size:12.5px;color:var(--ink-soft);margin-bottom:4px}
+.dash-num b{font-family:'Inter Tight',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.02em}
+.dash-num b i{font-style:normal;color:#2bc76a;font-size:15px;font-weight:700;margin-left:10px}
+.dash-rows{display:grid;gap:10px}
+.dash-row{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  background:var(--bg-tint);border-radius:12px;padding:13px 16px;font-size:13.5px;
+}
+.dash-row .l{display:flex;align-items:center;gap:10px;font-weight:600}
+.dash-row .l svg{color:var(--blue);flex-shrink:0}
+.dash-row .ok{color:#1f9e55;font-weight:700;font-size:12.5px;background:#e3f6eb;border-radius:100px;padding:4px 12px;white-space:nowrap}
+.dash-foot{
+  border-top:1px dashed var(--line);margin-top:20px;padding-top:18px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft);
+}
+.dash-foot b{color:var(--ink)}
+.dash .float{
+  position:absolute;right:-14px;top:84px;background:var(--navy);color:#fff;
+  border-radius:12px;padding:12px 18px;font-size:13px;font-weight:600;
+  box-shadow:0 16px 36px -14px rgba(13,18,32,.5);transform:rotate(3deg);
+}
+.dash .float b{color:var(--lime)}
+
+/* metrics band */
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{padding:34px 28px;border-left:1px solid var(--line)}
+.metric:first-child{border-left:none;padding-left:0}
+.metric b{display:block;font-family:'Inter Tight',sans-serif;font-size:38px;font-weight:800;letter-spacing:-.03em}
+.metric b i{font-style:normal;color:var(--blue)}
+.metric span{font-size:13.5px;color:var(--ink-soft)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.svc{
+  padding:36px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:#fff;transition:background .2s;position:relative;
+}
+.svc:nth-child(3n){border-right:none}
+.svc:nth-child(n+4){border-bottom:none}
+.svc:hover{background:var(--bg-tint)}
+.svc .num{
+  font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:700;color:var(--blue);
+  display:block;margin-bottom:44px;
+}
+.svc h3{font-size:18px;margin-bottom:10px;letter-spacing:-.01em}
+.svc p{font-size:14px;color:var(--ink-soft)}
+
+/* pricing */
+.pricing{background:var(--bg-tint)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:34px 30px;display:flex;flex-direction:column;position:relative;
+  transition:transform .22s,box-shadow .22s;
+}
+.plan:hover{transform:translateY(-4px);box-shadow:0 24px 54px -26px rgba(13,18,32,.25)}
+.plan.featured{background:var(--blue);border-color:var(--blue);color:#fff}
+.plan.featured .who{color:#b9c4ff}
+.plan.featured li{color:#dbe2ff}
+.plan.featured li::before{color:var(--lime)}
+.plan.featured .price small{color:#b9c4ff}
+.plan .tag{
+  position:absolute;top:-13px;right:26px;background:var(--lime);color:var(--ink);
+  font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;
+}
+.plan h3{font-size:19px;margin-bottom:4px}
+.plan .who{font-size:13.5px;color:var(--ink-soft);margin-bottom:24px}
+.price{font-family:'Inter Tight',sans-serif;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.price small{font-family:'Golos Text',sans-serif;font-size:14px;color:var(--ink-soft);font-weight:500;letter-spacing:0}
+.plan ul{list-style:none;margin:26px 0 30px;display:grid;gap:11px;flex:1}
+.plan li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft)}
+.plan li::before{content:"—";color:var(--blue);font-weight:700;flex-shrink:0}
+.pricing-note{text-align:center;margin-top:32px;font-size:14px;color:var(--ink-soft)}
+.pricing-note a{color:var(--blue);font-weight:700;text-decoration:underline}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stp{background:var(--bg-tint);border-radius:18px;padding:28px 26px;position:relative}
+.stp .n{
+  font-family:'Inter Tight',sans-serif;font-weight:800;font-size:14px;color:#fff;
+  background:var(--blue);width:34px;height:34px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:40px;
+}
+.stp h3{font-size:17px;margin-bottom:8px;letter-spacing:-.01em}
+.stp p{font-size:14px;color:var(--ink-soft)}
+
+/* why — navy */
+.why{background:var(--navy);color:#c6ccd9;border-radius:32px;overflow:hidden;position:relative}
+.why-inner{padding:88px 64px;position:relative}
+.why::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(600px 400px at 85% 10%,#000 20%,transparent 70%);
+          mask-image:radial-gradient(600px 400px at 85% 10%,#000 20%,transparent 70%);
+}
+.why .tagpill{background:rgba(216,243,78,.14);color:var(--lime)}
+.why h2{color:#fff}
+.why .lead{color:#8d95a6}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;position:relative;margin-top:48px}
+.why-item{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:30px 28px;transition:background .2s;
+}
+.why-item:hover{background:rgba(255,255,255,.09)}
+.why-item h3{font-size:17.5px;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.why-item h3 span{color:var(--lime);margin-right:10px;font-family:'Inter Tight',sans-serif;font-size:14px}
+.why-item p{font-size:14.5px;color:#8d95a6}
+
+/* quote */
+.quote-box{max-width:800px;margin:0 auto;text-align:center}
+.quote-box .stars{color:var(--blue);font-size:15px;letter-spacing:5px;margin-bottom:24px}
+.quote-box blockquote{
+  font-family:'Inter Tight',sans-serif;font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(19px,2.5vw,26px);line-height:1.45;margin-bottom:28px;
+}
+.quote-box blockquote em{font-style:normal;color:var(--blue)}
+.quote-box .author b{display:block;font-size:15px}
+.quote-box .author span{font-size:13.5px;color:var(--ink-soft)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.faq-side{position:sticky;top:100px}
+.faq-side .mini{
+  margin-top:28px;background:var(--bg-tint);border-radius:16px;padding:26px;
+}
+.faq-side .mini b{display:block;font-size:15px;margin-bottom:6px}
+.faq-side .mini p{font-size:14px;color:var(--ink-soft);margin-bottom:18px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;cursor:pointer;
+  padding:24px 46px 24px 0;font-family:'Golos Text',sans-serif;font-size:16.5px;
+  font-weight:600;color:var(--ink);position:relative;transition:color .2s;
+}
+.faq-q:hover{color:var(--blue)}
+.faq-q::after{
+  content:"+";position:absolute;right:4px;top:50%;transform:translateY(-52%);
+  font-family:'Inter Tight',sans-serif;font-size:26px;font-weight:600;color:var(--blue);
+  transition:transform .25s;
+}
+.faq-item.open .faq-q::after{transform:translateY(-52%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 0 24px;font-size:15px;color:var(--ink-soft);max-width:620px}
+
+/* contact */
+.contact{background:var(--bg-tint)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.contact-info{display:grid;margin-top:6px}
+.contact-info .row{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.contact-info .row:last-child{border-bottom:none}
+.contact-info .row b{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:700}
+.contact-info .row span{font-size:17px;font-weight:600}
+.form{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px 36px;
+  box-shadow:0 30px 60px -34px rgba(13,18,32,.2);
+}
+.form h3{font-size:21px;margin-bottom:8px;letter-spacing:-.01em}
+.form>p{font-size:14px;color:var(--ink-soft);margin-bottom:26px}
+.form label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+.form input,.form textarea{
+  width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;
+  font-family:inherit;font-size:15px;margin-bottom:20px;background:var(--bg-tint);
+  color:var(--ink);transition:border-color .2s,box-shadow .2s,background .2s;
+}
+.form input:focus,.form textarea:focus{
+  outline:none;border-color:var(--blue);background:#fff;
+  box-shadow:0 0 0 3px rgba(36,71,245,.14);
+}
+.form .btn{width:100%}
+.form .fine{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;line-height:1.5}
+
+/* согласие в форме */
+.consent{display:flex;gap:10px;align-items:flex-start;margin:-6px 0 18px}
+.consent input{
+  width:18px;height:18px;margin:3px 0 0;flex-shrink:0;accent-color:var(--blue);
+  border-radius:4px;padding:0;background:transparent;border:none;
+}
+.consent label{font-size:12.5px;font-weight:400;color:var(--ink-soft);line-height:1.5;margin:0}
+.consent a{color:var(--blue);text-decoration:underline}
+
+/* cookie-баннер */
+.cookie{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:80;
+  background:var(--navy);color:#c6ccd9;border-radius:16px;
+  padding:20px 24px;display:none;gap:20px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;box-shadow:0 24px 50px -20px rgba(13,18,32,.5);
+  max-width:920px;margin:0 auto;
+}
+.cookie.show{display:flex;animation:cookieUp .35s ease}
+@keyframes cookieUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cookie p{font-size:13.5px;margin:0;max-width:600px}
+.cookie a{color:var(--lime);text-decoration:underline}
+.cookie .btn{padding:12px 26px;font-size:14px;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){
+  .cookie.show{animation:none}
+  .rv{transition:none}
+}
+
+footer{padding:38px 0;font-size:13.5px;color:var(--ink-soft);border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{color:var(--ink-soft);text-decoration:underline}
+.footer-links a:hover{color:var(--blue)}
+
+@media(max-width:960px){
+  .hero-grid,.contact-grid,.faq-grid{grid-template-columns:1fr;gap:46px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc:nth-child(3n){border-right:1px solid var(--line)}
+  .svc:nth-child(2n){border-right:none}
+  .svc:nth-child(n+4){border-bottom:1px solid var(--line)}
+  .svc:nth-child(n+5){border-bottom:none}
+  .plans{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .metrics-row{grid-template-columns:1fr 1fr}
+  .metric:nth-child(odd){border-left:none;padding-left:0}
+  .why-inner{padding:60px 36px}
+  .why-grid{grid-template-columns:1fr}
+  .faq-side{position:static}
+  .dash .float{right:8px}
+  .nav-links,.nav-btn{display:none}
+  .nav-links.open{
+    display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
+    background:#fff;border-bottom:1px solid var(--line);padding:22px 24px;gap:16px;
+  }
+  .burger{display:block}
+}
+@media(max-width:620px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc,.svc:nth-child(3n){border-right:none}
+  .svc{border-bottom:1px solid var(--line)!important}
+  .svc:last-child{border-bottom:none!important}
+  .steps{grid-template-columns:1fr}
+  .metrics-row{grid-template-columns:1fr 1fr}
+  .metric{padding:22px 16px}
+  .metric b{font-size:28px}
+  .section{padding:64px 0}
+  .hero{padding:56px 0 52px}
+  .why-inner{padding:48px 24px}
+  .why{border-radius:20px}
+  .topbar{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Календарь ИП/ООО: ближайшая отчётная дата — <b>28 октября, аванс по УСН за 9 месяцев</b></span>
+    <span>Работаем со всей Россией — удалённо</span>
+  </div>
+</div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="logo">НЕО<span>*</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#pricing">Тарифы</a></li>
+      <li><a href="#steps">Подключение</a></li>
+      <li><a href="#faq">Вопросы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-blue nav-btn">Рассчитать стоимость</a>
+      <button class="burger" id="burger" aria-label="Меню">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="rv in">
+      <h1>Бухгалтерия для бизнеса — <span class="hl">цифрами</span>, а не <span class="mark">нервами</span></h1>
+      <p>Ведём учёт ИП и ООО под ключ: отчётность, налоги, зарплата, общение с ФНС. Фиксированная цена в договоре, финансовая ответственность за ошибки.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-blue">Рассчитать стоимость
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#pricing" class="btn btn-line">Тарифы</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hbadge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Аудит учёта бесплатно
+        </span>
+        <span class="hbadge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Подключение за 1 день
+        </span>
+        <span class="hbadge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Ответственность в договоре
+        </span>
+      </div>
+    </div>
+    <div class="rv in">
+      <div class="dash">
+        <div class="dash-head">
+          <span>ООО «Ваша компания»</span>
+          <span class="dot">бухгалтер на связи</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-num">
+            <span>Налоги к уплате за квартал</span>
+            <b>184 200 ₽ <i>−12% к прошлому</i></b>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <span class="l">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                Декларация УСН
+              </span>
+              <span class="ok">Сдана в срок</span>
+            </div>
+            <div class="dash-row">
+              <span class="l">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Зарплата, 8 сотрудников
+              </span>
+              <span class="ok">Рассчитана</span>
+            </div>
+            <div class="dash-row">
+              <span class="l">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                Требование ФНС
+              </span>
+              <span class="ok">Ответ отправлен</span>
+            </div>
+          </div>
+          <div class="dash-foot">
+            <span>Ближайший отчёт</span>
+            <b>СФР · через 9 дней · готов</b>
+          </div>
+        </div>
+        <div class="float">Экономия на налогах: <b>212 000 ₽/год</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="metrics">
+  <div class="wrap metrics-row">
+    <div class="metric rv"><b>12 <i>лет</i></b><span>на рынке аутсорсинга учёта</span></div>
+    <div class="metric rv"><b>340<i>+</i></b><span>компаний на обслуживании</span></div>
+    <div class="metric rv"><b>0 ₽</b><span>штрафов клиентов по нашей вине</span></div>
+    <div class="metric rv"><b>1 <i>день</i></b><span>на подключение и приём дел</span></div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tagpill">Услуги</span>
+      <h2>Закрываем все задачи учёта — от нулёвки до полного сопровождения</h2>
+      <p class="lead">Работаем с ИП и ООО на УСН, ПСН, ОСНО. Дела принимаем сами.</p>
+    </div>
+    <div class="svc-grid rv">
+      <div class="svc">
+        <span class="num">/01</span>
+        <h3>Бухгалтерское сопровождение</h3>
+        <p>Полное ведение учёта: первичка, книги учёта, отчётность в ФНС, СФР и Росстат.</p>
+      </div>
+      <div class="svc">
+        <span class="num">/02</span>
+        <h3>Зарплата и кадры</h3>
+        <p>Расчёт зарплаты, отпускных и больничных, кадровые документы, отчётность по сотрудникам.</p>
+      </div>
+      <div class="svc">
+        <span class="num">/03</span>
+        <h3>Налоговая оптимизация</h3>
+        <p>Подбираем систему налогообложения и законные способы снизить налоговую нагрузку.</p>
+      </div>
+      <div class="svc">
+        <span class="num">/04</span>
+        <h3>Восстановление учёта</h3>
+        <p>Приводим в порядок запущенную бухгалтерию, закрываем долги по отчётности без паники.</p>
+      </div>
+      <div class="svc">
+        <span class="num">/05</span>
+        <h3>Нулевая отчётность</h3>
+        <p>Сдаём обязательные отчёты для компаний без деятельности — чтобы не копились штрафы.</p>
+      </div>
+      <div class="svc">
+        <span class="num">/06</span>
+        <h3>Регистрация ИП и ООО</h3>
+        <p>Готовим документы, подаём в налоговую, открываем счёт. Без госпошлины при онлайн-подаче.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tagpill">Тарифы</span>
+      <h2>Фиксированная цена — без сюрпризов в конце месяца</h2>
+      <p class="lead">Стоимость зависит от системы налогообложения, оборота и числа сотрудников. Точный расчёт — после бесплатного аудита.</p>
+    </div>
+    <div class="plans">
+      <div class="plan rv">
+        <h3>Старт</h3>
+        <p class="who">Для ИП на УСН без сотрудников</p>
+        <div class="price">3 900 ₽ <small>/ мес</small></div>
+        <ul>
+          <li>Ведение книги учёта доходов</li>
+          <li>Расчёт налогов и взносов</li>
+          <li>Сдача годовой декларации</li>
+          <li>Консультации в чате</li>
+        </ul>
+        <a href="#contact" class="btn btn-line">Выбрать тариф</a>
+      </div>
+      <div class="plan featured rv">
+        <span class="tag">Популярный</span>
+        <h3>Бизнес</h3>
+        <p class="who">Для ООО и ИП с сотрудниками</p>
+        <div class="price">9 900 ₽ <small>/ мес</small></div>
+        <ul>
+          <li>Полное ведение учёта</li>
+          <li>Зарплата и кадры до 5 сотрудников</li>
+          <li>Вся отчётность: ФНС, СФР, Росстат</li>
+          <li>Персональный бухгалтер</li>
+          <li>Ответы на требования налоговой</li>
+        </ul>
+        <a href="#contact" class="btn btn-lime">Выбрать тариф</a>
+      </div>
+      <div class="plan rv">
+        <h3>Корпоративный</h3>
+        <p class="who">Для компаний на ОСНО и с ВЭД</p>
+        <div class="price">24 900 ₽ <small>/ мес</small></div>
+        <ul>
+          <li>Учёт с НДС и валютными операциями</li>
+          <li>Сотрудники без ограничений</li>
+          <li>Управленческая отчётность</li>
+          <li>Сопровождение проверок</li>
+          <li>Главбух на связи 7 дней в неделю</li>
+        </ul>
+        <a href="#contact" class="btn btn-line">Выбрать тариф</a>
+      </div>
+    </div>
+    <p class="pricing-note rv">Цены «от» — финальную назовём после аудита и зафиксируем в договоре. Нужны разовые услуги? <a href="#contact">Напишите нам</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="steps">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tagpill">Подключение</span>
+      <h2>Четыре шага — и учёт больше не ваша забота</h2>
+    </div>
+    <div class="steps">
+      <div class="stp rv">
+        <span class="n">01</span>
+        <h3>Знакомимся</h3>
+        <p>Созваниваемся, смотрим ваш учёт и считаем точную стоимость обслуживания.</p>
+      </div>
+      <div class="stp rv">
+        <span class="n">02</span>
+        <h3>Подписываем договор</h3>
+        <p>Фиксируем цену, объём работ и финансовую ответственность за ошибки.</p>
+      </div>
+      <div class="stp rv">
+        <span class="n">03</span>
+        <h3>Принимаем дела</h3>
+        <p>Забираем базу и документы, проверяем прошлые периоды, указываем на риски.</p>
+      </div>
+      <div class="stp rv">
+        <span class="n">04</span>
+        <h3>Ведём учёт</h3>
+        <p>Вы отправляете документы в чат — остальное происходит без вашего участия.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="why rv">
+      <div class="why-inner">
+        <span class="tagpill">Почему мы</span>
+        <h2>Надёжнее штатного бухгалтера — и дешевле</h2>
+        <p class="lead">Вместо одного человека на вас работает команда: бухгалтер, кадровик и налоговый консультант.</p>
+        <div class="why-grid">
+          <div class="why-item">
+            <h3><span>/01</span>Финансовая ответственность</h3>
+            <p>Если штраф или пени возникли по нашей вине — компенсируем их полностью. Это условие договора, а не обещание.</p>
+          </div>
+          <div class="why-item">
+            <h3><span>/02</span>Никаких «бухгалтер в отпуске»</h3>
+            <p>Команда взаимозаменяема: отчётность сдаётся в срок независимо от отпусков и больничных.</p>
+          </div>
+          <div class="why-item">
+            <h3><span>/03</span>Прозрачность</h3>
+            <p>Личный кабинет со статусом задач, календарём отчётности и всеми документами в одном месте.</p>
+          </div>
+          <div class="why-item">
+            <h3><span>/04</span>Говорим по-человечески</h3>
+            <p>Объясняем налоги без канцелярита и заранее предупреждаем об изменениях, которые вас коснутся.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px">
+  <div class="wrap">
+    <div class="quote-box rv">
+      <div class="stars">★★★★★</div>
+      <blockquote>«Перешли после штатного бухгалтера — за первый же квартал нашли переплату и вернули <em>167 000 ₽</em>. Теперь бухгалтерию просто не замечаю: документы в чат — и всё.»</blockquote>
+      <div class="author">
+        <b>Андрей К.</b>
+        <span>владелец сети кофеен, клиент с 2022 года</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top:56px">
+  <div class="wrap faq-grid">
+    <div class="faq-side rv">
+      <span class="tagpill">FAQ</span>
+      <h2>Частые вопросы</h2>
+      <div class="mini">
+        <b>Не нашли ответ?</b>
+        <p>Спросите напрямую — отвечаем в течение часа в рабочее время.</p>
+        <a href="#contact" class="btn btn-blue" style="padding:12px 22px;font-size:14px">Задать вопрос</a>
+      </div>
+    </div>
+    <div class="faq-list rv">
+      <div class="faq-item">
+        <button class="faq-q">Как передаются документы?</button>
+        <div class="faq-a"><p>Фотографируете или сканируете документы и отправляете в чат либо загружаете в личный кабинет. Бумажные оригиналы можно передать курьером — заберём сами.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Что будет, если вы ошибётесь?</button>
+        <div class="faq-a"><p>Ответственность закреплена в договоре: штрафы и пени, возникшие по нашей вине, мы компенсируем полностью. За 12 лет таких случаев не было.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Мы сейчас у другой компании. Сложно ли перейти?</button>
+        <div class="faq-a"><p>Нет. Вы подписываете договор — дальше мы сами запрашиваем базу и документы, принимаем дела и проверяем прошлые периоды. Ваше участие — один звонок.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Работаете ли вы с моим регионом?</button>
+        <div class="faq-a"><p>Да, работаем со всей Россией удалённо: отчётность сдаётся электронно, документы — через чат и личный кабинет.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли платить только за сдачу отчётности?</button>
+        <div class="faq-a"><p>Да, есть разовые услуги: сдача отдельного отчёта, нулевая отчётность, консультация. Цены назовём после короткого созвона.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <span class="tagpill">Контакты</span>
+      <h2>Обсудим ваш учёт?</h2>
+      <p class="lead" style="margin-bottom:26px">Оставьте заявку — перезвоним в течение 15 минут в рабочее время, проведём бесплатный аудит и назовём точную цену.</p>
+      <div class="contact-info">
+        <div class="row"><b>Телефон</b><span>+7 900 000-00-00</span></div>
+        <div class="row"><b>Почта</b><span>info@buhgalteria-neo.ru</span></div>
+        <div class="row"><b>Офис</b><span>Москва, ул. Примерная, 10</span></div>
+        <div class="row"><b>Режим работы</b><span>Пн–Пт, 9:00–19:00</span></div>
+      </div>
+    </div>
+    <form class="form rv" onsubmit="event.preventDefault();this.innerHTML='<h3>Спасибо! Заявка отправлена.</h3><p style=\'margin:0\'>Перезвоним в течение 15 минут в рабочее время.</p>'">
+      <h3>Оставить заявку</h3>
+      <p>Это ни к чему не обязывает — просто познакомимся.</p>
+      <label for="name">Имя</label>
+      <input id="name" type="text" placeholder="Как к вам обращаться" required>
+      <label for="phone">Телефон</label>
+      <input id="phone" type="tel" placeholder="+7 ___ ___-__-__" required>
+      <label for="msg">Кратко о задаче</label>
+      <textarea id="msg" rows="3" placeholder="Например: ИП на УСН, два сотрудника"></textarea>
+      <div class="consent">
+        <input id="agree" type="checkbox" required>
+        <label for="agree">Я даю <a href="/soglasie.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и подтверждаю, что ознакомлен с <a href="/politika.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      </div>
+      <button type="submit" class="btn btn-blue">Получить расчёт
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="#" class="logo">НЕО<span>*</span></a>
+    <span class="footer-links">
+      <a href="/politika.html">Политика конфиденциальности</a>
+      <a href="/soglasie.html">Согласие на обработку данных</a>
+    </span>
+    <span>© 2026 ООО «НЕО» · ИНН 0000000000 · ОГРН 0000000000000</span>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie">
+  <p>Мы используем файлы cookie, чтобы сайт работал корректно и мы понимали, какие страницы вам полезны. Подробнее — в <a href="/politika.html">политике конфиденциальности</a>.</p>
+  <button class="btn btn-blue" id="cookieOk" type="button">Хорошо</button>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AccountingService",
+  "name":"НЕО",
+  "url":"https://buhgalteria-neo.ru/",
+  "description":"Бухгалтерское сопровождение ИП и ООО: отчётность, налоги, зарплата, общение с ФНС. Фиксированная цена в договоре.",
+  "telephone":"+7 900 000-00-00",
+  "email":"info@buhgalteria-neo.ru",
+  "priceRange":"от 3900 ₽/мес",
+  "address":{"@type":"PostalAddress","addressLocality":"Москва","streetAddress":"ул. Примерная, 10","addressCountry":"RU"},
+  "areaServed":"RU",
+  "openingHours":"Mo-Fr 09:00-19:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Как передаются документы?","acceptedAnswer":{"@type":"Answer","text":"Фотографируете или сканируете документы и отправляете в чат либо загружаете в личный кабинет. Бумажные оригиналы можно передать курьером — заберём сами."}},
+    {"@type":"Question","name":"Что будет, если вы ошибётесь?","acceptedAnswer":{"@type":"Answer","text":"Ответственность закреплена в договоре: штрафы и пени, возникшие по нашей вине, мы компенсируем полностью."}},
+    {"@type":"Question","name":"Мы сейчас у другой компании. Сложно ли перейти?","acceptedAnswer":{"@type":"Answer","text":"Нет. Вы подписываете договор — дальше мы сами запрашиваем базу и документы, принимаем дела и проверяем прошлые периоды."}},
+    {"@type":"Question","name":"Работаете ли вы с моим регионом?","acceptedAnswer":{"@type":"Answer","text":"Да, работаем со всей Россией удалённо: отчётность сдаётся электронно, документы — через чат и личный кабинет."}},
+    {"@type":"Question","name":"Можно ли платить только за сдачу отчётности?","acceptedAnswer":{"@type":"Answer","text":"Да, есть разовые услуги: сдача отдельного отчёта, нулевая отчётность, консультация."}}
+  ]
+}
+</script>
+
+<script>
+// cookie-уведомление
+(function(){
+  var box=document.getElementById('cookie'), ok=document.getElementById('cookieOk'), KEY='cookie_ok_v1';
+  var seen=false;
+  try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
+  if(!seen)setTimeout(function(){box.classList.add('show')},900);
+  ok.addEventListener('click',function(){
+    box.classList.remove('show');
+    try{localStorage.setItem(KEY,'1')}catch(e){}
+  });
+})();
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement, ans=item.querySelector('.faq-a');
+    var open=item.classList.toggle('open');
+    ans.style.maxHeight=open?ans.scrollHeight+'px':0;
+  });
+});
+var burger=document.getElementById('burger'), nav=document.getElementById('navLinks');
+burger.addEventListener('click',function(){nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.rv:not(.in)').forEach(function(el,i){
+  el.style.transitionDelay=(i%3)*70+'ms';io.observe(el);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /politika.html
+Disallow: /soglasie.html
+
+Sitemap: https://buhgalteria-neo.ru/sitemap.xml
+Host: https://buhgalteria-neo.ru
