@@ -340,6 +340,21 @@ footer{padding:38px 0;font-size:13.5px;color:var(--ink-soft);border-top:1px soli
 .footer-links a{color:var(--ink-soft);text-decoration:underline}
 .footer-links a:hover{color:var(--blue)}
 
+/* фотографии */
+.why-photo{margin:36px 0 0;position:relative}
+.why-photo img{
+  display:block;width:100%;height:clamp(200px,24vw,300px);object-fit:cover;
+  border-radius:16px;filter:saturate(.9) contrast(1.02);
+}
+.why-photo::after{
+  content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(13,18,32,.15),rgba(13,18,32,.45));
+}
+.mini-photo{
+  display:block;width:100%;height:150px;object-fit:cover;
+  border-radius:12px;margin-bottom:18px;
+}
+
 /* ---- мобильная оптимизация ---- */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 a,button,input,textarea{-webkit-tap-highlight-color:rgba(36,71,245,.15)}
@@ -642,6 +657,9 @@ a,button,input,textarea{-webkit-tap-highlight-color:rgba(36,71,245,.15)}
         <span class="tagpill">Почему мы</span>
         <h2>Надёжнее штатного бухгалтера — и дешевле</h2>
         <p class="lead">Вместо одного человека на вас работает команда: бухгалтер, кадровик и налоговый консультант.</p>
+        <figure class="why-photo">
+          <img src="img/team.webp" width="1400" height="933" alt="Команда бухгалтеров обсуждает отчётность клиента" loading="lazy" decoding="async">
+        </figure>
         <div class="why-grid">
           <div class="why-item">
             <h3><span>/01</span>Финансовая ответственность</h3>
@@ -684,6 +702,7 @@ a,button,input,textarea{-webkit-tap-highlight-color:rgba(36,71,245,.15)}
       <span class="tagpill">FAQ</span>
       <h2>Частые вопросы</h2>
       <div class="mini">
+        <img class="mini-photo" src="img/buh.webp" width="1100" height="733" alt="Бухгалтер консультирует клиента по видеосвязи" loading="lazy" decoding="async">
         <b>Не нашли ответ?</b>
         <p>Спросите напрямую — отвечаем в течение часа в рабочее время.</p>
         <a href="#contact" class="btn btn-blue" style="padding:12px 22px;font-size:14px">Задать вопрос</a>
