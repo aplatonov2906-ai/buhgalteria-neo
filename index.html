@@ -340,6 +340,29 @@ footer{padding:38px 0;font-size:13.5px;color:var(--ink-soft);border-top:1px soli
 .footer-links a{color:var(--ink-soft);text-decoration:underline}
 .footer-links a:hover{color:var(--blue)}
 
+/* ---- мобильная оптимизация ---- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button,input,textarea{-webkit-tap-highlight-color:rgba(36,71,245,.15)}
+.btn,button,a{touch-action:manipulation}
+@media(max-width:640px){
+  /* 16px — иначе iOS зумит страницу при фокусе на поле */
+  .form input,.form textarea{font-size:16px}
+  /* тач-зоны не меньше 44px */
+  .burger{padding:11px;margin-right:-11px}
+  .nav-links a{display:block;padding:10px 0}
+  .footer-links a{display:inline-block;padding:7px 0}
+  .contact-info .row a{display:inline-block;padding:4px 0}
+  .consent input{width:22px;height:22px}
+  .consent label{font-size:13px}
+  /* компактный cookie-баннер */
+  .cookie{left:10px;right:10px;bottom:10px;padding:16px 18px;gap:12px;border-radius:12px}
+  .cookie p{font-size:13px}
+  .cookie .btn{width:100%;padding:13px 20px}
+  /* дашборд в герое — компактнее */
+  .dash .float{position:static;display:inline-block;margin:0 24px 20px;transform:none}
+  .dash-num b{font-size:28px}
+}
+
 @media(max-width:960px){
   .hero-grid,.contact-grid,.faq-grid{grid-template-columns:1fr;gap:46px}
   .svc-grid{grid-template-columns:1fr 1fr}
